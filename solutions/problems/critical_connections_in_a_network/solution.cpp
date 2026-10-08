@@ -1,6 +1,6 @@
 class Solution {
 public:
-
+    //Tarjan's Algorithm
     void dfs(int node, int parent, int &timer, vector<int> &disc, vector<int> &low, unordered_map<int, list<int>> &adj, unordered_map<int, bool> &vis, vector<vector<int>> &ans){
                 
                 vis[node]= 1;
