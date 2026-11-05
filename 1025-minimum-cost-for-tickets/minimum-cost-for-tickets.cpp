@@ -64,10 +64,38 @@ int solveTab(int n, vector<int> &days, vector<int> &costs){
 
     int mincostTickets(vector<int>& days, vector<int>& costs) {
 
-        int n= days.size();
+        //int n= days.size();
         //vector<int> dp(n+1 , -1);
         //return solveMem(n, days, costs, 0, dp);
 
-        return solveTab(n, days, costs);
+        //return solveTab(n, days, costs);
+
+
+    //Via Space Optimization
+    int ans= 0;
+    queue<pair<int, int>> week;
+    queue<pair<int, int>> month;
+
+    for(int day: days){
+
+        //Step 1: remove expired days
+        while(!month.empty() && month.front().first + 30 <= day){
+            month.pop();
+        }
+        while(!week.empty() && week.front().first + 7 <= day){
+            week.pop();
+        }
+
+        //Step- 2: add cost for current day-> push kya kar raha hai: Yeh record kar raha hai ki "agar hum current day par naya 7-day ya 30-day pass khareed lete, toh aaj tak ka total kharcha kitna banta (ans + pass ki cost), jo agle 7 ya 30 dinon ke travel ko cover karega."
+        week.push(make_pair(day, ans + costs[1]));
+        month.push(make_pair(day, ans + costs[2]));
+
+        //Step- 3: ans update 
+        ans= min(ans + costs[0] , min(week.front().second, month.front().second));
+
+    }
+    return ans;
+
+
     }
 };
