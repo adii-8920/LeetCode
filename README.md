@@ -1,6 +1,6 @@
 # 🚀 LeetCode Solutions & DSA Repository
 
-Welcome to my LeetCode journey! This repository contains my clean, optimized solutions to Data Structures and Algorithms problems in **C++**, synchronized automatically via **LeetSync**.
+Welcome to my LeetCode journey! This repository contains my clean, optimized solutions to Data Structures and Algorithms problems in **C++**.
 
 ---
 
