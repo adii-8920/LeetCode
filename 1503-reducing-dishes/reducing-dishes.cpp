@@ -73,7 +73,24 @@ public:
 
         //return solveTab(satisfaction);
 
-        return solveSpace(satisfaction);
+        //return solveSpace(satisfaction);
+
+        int suffixSum = 0; // Piche (right) se lekar ab tak chuni gayi saari dishes ka sum
+        int total= 0;
+
+        for(int i = n - 1; i >= 0; i--){
+            if(suffixSum + satisfaction[i] > 0){
+                suffixSum += satisfaction[i];
+
+                total+= suffixSum;
+            }
+            else{
+                break;
+            }
+        }
+
+        return total;
+
 
     }
 };
