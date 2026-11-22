@@ -75,7 +75,7 @@ public:
         
         //return solve(nums1, nums2, 1, swapped);
 
-        int n= nums2.size();
+        int n= nums1.size();
 
         vector<vector<int>> dp(n, (vector<int> (2, -1)));
         return solveMem(nums1, nums2, 1, swapped, dp);
