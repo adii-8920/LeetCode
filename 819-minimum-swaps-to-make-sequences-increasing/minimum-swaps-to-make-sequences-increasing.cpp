@@ -82,10 +82,6 @@ public:
                     swap(prev1, prev2);
                 }
 
-                if(dp[index][swapped] != -1){
-                    return dp[index][swapped];
-                }
-
                 //noswap
                 if(nums1[index] > prev1 && nums2[index] > prev2){
                     ans= dp[index+1][0];
@@ -104,6 +100,8 @@ public:
 
     }
 
+    
+
 
     int minSwap(vector<int>& nums1, vector<int>& nums2) {
         
@@ -117,8 +115,10 @@ public:
 
         int n= nums1.size();
 
-        vector<vector<int>> dp(n, (vector<int> (2, -1)));
-        return solveMem(nums1, nums2, 1, swapped, dp);
+        //vector<vector<int>> dp(n, (vector<int> (2, -1)));
+        //return solveMem(nums1, nums2, 1, swapped, dp);
+
+        return solveTab(nums1, nums2);
 
     }   
 };
