@@ -143,8 +143,9 @@ public:
             swap= currswap;
             noswap= currnoswap;
 
-        }
+        }   
         
+        //swap, no swap, dono se answer aa raha hai to uska minimum return karte hain   
         return min(swap, noswap);
 
     }
