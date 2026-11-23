@@ -1,6 +1,27 @@
 class Solution {
 public:
 
+    int solve(int index, int diff, vector<int> &arr){
+        
+        //Backward Check idhar hoga
+        
+        if(index < 0){
+            return 0;
+        }
+        
+        int ans= 0;
+        for(int j= index-1 ; j>= 0; j--){
+            if(arr[index] - arr[j] == diff){
+                ans= max(ans, 1+ solve(j, diff, arr));
+            }
+        }
+        
+        return ans;
+        
+    }
+
+
+
     int solveMem(int index, int diff, vector<int> &nums, unordered_map<int, int> dp[]){
         
         //Backward Check idhar hoga
